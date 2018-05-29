@@ -160,6 +160,14 @@ def test_tomcat_spring_scc_xml(File):
     assert scc.contains("tv.seachange.advads.scc.StreamControlClientContextEmulator")
     assert scc.contains("tv.seachange.advads.scc.manager.SessionCacheManagerEmulator")
 
+def test_seachange_yum_repo(File):
+    scc= File("/etc/yum.repos.d/SeaChange.repo")
+    assert scc.user == "seachange"
+    assert scc.group == "seachange"
+    assert scc.mode == 0o644
+    assert scc.contains("baseurl = http://localhost/seachange/thirdparty-repository")
+    assert scc.contains("enabled = 1")
+
 def test_adr_war(File):
     adr= File("/seachange/local/adr-latest/webapps/adr.war")
     assert adr.user == "seachange"
