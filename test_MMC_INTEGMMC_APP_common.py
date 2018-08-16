@@ -116,14 +116,6 @@ def test_jexec_service_exists(host):
 
 def test_apachectl_syntax_output(Command):
     command = Command('/usr/sbin/apachectl -t')
-def test_apachectl_syntax_output(Command):
-    command = Command('/usr/sbin/apachectl -t')
-def test_apachectl_syntax_output(Command):
-    command = Command('/usr/sbin/apachectl -t')
-def test_apachectl_syntax_output(Command):
-    command = Command('/usr/sbin/apachectl -t')
-def test_apachectl_syntax_output(Command):
-    command = Command('/usr/sbin/apachectl -t')
     assert command.rc == 0
 
 def test_tomcat_package(host):
